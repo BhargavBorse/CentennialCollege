@@ -33,15 +33,6 @@ class ViewController: UIViewController {
         else if sender.selectedSegmentIndex == 1{
             view.backgroundColor = .green
         }
-        else if sender.selectedSegmentIndex == 2{
-            view.backgroundColor = .blue
-        }
-        else if sender.selectedSegmentIndex == 3{
-            view.backgroundColor = .black
-        }
-        else{
-            view.backgroundColor = .white
-        }
         
     }
     func displayAlert(){
