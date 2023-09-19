@@ -9,10 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var buttonDO: UIButton!
+    @IBOutlet weak var switch2: UISwitch!
+    @IBOutlet weak var switch1: UISwitch!
+    @IBOutlet weak var numberField: UITextField!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var myLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonDO.isHidden = true
+        switch1.isHidden = true
+        switch2.isHidden = true
         // Do any additional setup after loading the view.
     }
     @IBAction func onSlideChanged(_ sender: UISlider){
@@ -28,17 +38,22 @@ class ViewController: UIViewController {
     }
     @IBAction func tabValueChanged(_ sender: UISegmentedControl){
         if sender.selectedSegmentIndex == 0{
-            view.backgroundColor = .red
+            buttonDO.isHidden = true
+            switch1.isHidden = false
+            switch2.isHidden = false
         }
         else if sender.selectedSegmentIndex == 1{
-            view.backgroundColor = .green
+            buttonDO.isHidden = false
+            switch1.isHidden = true
+            switch2.isHidden = true
         }
         
     }
     func displayAlert(){
-        let alert = UIAlertController(title: "Warning", message: "Something went wrong!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Something happened!", message: "Everything went well", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {action in print("Process is over")
         }))
+        
         present(alert, animated: true)
     }
     
