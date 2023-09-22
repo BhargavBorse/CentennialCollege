@@ -100,7 +100,7 @@ server.put('/users/:id', function (req, res, next) {
   }
   
   let newUser = {
-		_id: req.body.id,
+		_id: req.params.id,
 		name: req.body.name, 
 		age: req.body.age
 	}
