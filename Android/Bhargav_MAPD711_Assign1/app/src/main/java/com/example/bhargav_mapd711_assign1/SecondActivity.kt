@@ -1,40 +1,39 @@
-package com.example.bhargav_mapd711_assign1
-
-import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.bhargav_mapd711_assign1.databinding.ActivitySecondBinding
+import android.os.Bundle
+import android.widget.TextView
+import com.example.bhargav_mapd711_assign1.R
 
 class SecondActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivitySecondBinding
+    private lateinit var tvFullName: TextView
+    private lateinit var tvQualification: TextView
+    private lateinit var tvProfession: TextView
+    private lateinit var tvHobby: TextView
+    private lateinit var tvDreamJob: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_second)
 
-        binding = ActivitySecondBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        tvFullName = findViewById(R.id.tvFullName)
+        tvQualification = findViewById(R.id.tvQualification)
+        tvProfession = findViewById(R.id.tvProfession)
+        tvHobby = findViewById(R.id.tvHobby)
+        tvDreamJob = findViewById(R.id.tvDreamJob)
 
-        setSupportActionBar(binding.toolbar)
+        val intent = intent
 
-        val navController = findNavController(R.id.nav_host_fragment_content_second)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        val fullName = intent.getStringExtra("FULL_NAME")
+        val qualification = intent.getStringExtra("QUALIFICATION")
+        val profession = intent.getStringExtra("PROFESSION")
+        val hobby = intent.getStringExtra("HOBBY")
+        val dreamJob = intent.getStringExtra("DREAM_JOB")
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_second)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        tvFullName.text = "Full Name: $fullName"
+        tvQualification.text = "Qualification: $qualification"
+        tvProfession.text = "Profession: $profession"
+        tvHobby.text = "Hobby: $hobby"
+        tvDreamJob.text = "Dream Job: $dreamJob"
     }
 }
