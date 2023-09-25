@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import com.example.bhargav_mapd711_assign1.SecondActivity
 import com.example.bhargav_mapd711_assign1.R
 
 class MainActivity : AppCompatActivity() {
