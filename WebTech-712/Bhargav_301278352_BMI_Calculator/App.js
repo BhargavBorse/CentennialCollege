@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Picker } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 
 const App = () => {
   const [weight, setWeight] = useState('');
@@ -17,14 +18,19 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>BMI Calculator</Text>
-      <Picker
-        selectedValue={measurementSystem}
-        style={styles.picker}
-        onValueChange={(itemValue) => setMeasurementSystem(itemValue)}
-      >
-        <Picker.Item label="Metric (kg, cm)" value="metric" />
-        <Picker.Item label="Imperial (lb, in)" value="imperial" />
-      </Picker>
+      <RNPickerSelect
+        placeholder={{
+          label: 'Select Measurement System',
+          value: null,
+        }}
+        items={[
+          { label: 'Metric (kg, cm)', value: 'metric' },
+          { label: 'Imperial (lb, in)', value: 'imperial' },
+        ]}
+        onValueChange={(value) => setMeasurementSystem(value)}
+        style={pickerSelectStyles}
+        value={measurementSystem}
+      />
       <TextInput
         placeholder="Weight"
         style={styles.input}
@@ -66,10 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
-  picker: {
-    width: '80%',
-    marginTop: 10,
-  },
   input: {
     width: '80%',
     height: 40,
@@ -82,6 +84,33 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 18,
     fontWeight: 'bold',
+  },
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30,
+    marginTop: 10,
+    width: '80%',
+  },
+  inputAndroid: {
+    fontSize: 16,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderWidth: 0.5,
+    borderColor: 'purple',
+    borderRadius: 8,
+    color: 'black',
+    paddingRight: 30,
+    marginTop: 10,
+    width: '80%',
   },
 });
 
