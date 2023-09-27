@@ -1,11 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect } from 'react';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
+
+  const [data, setData] = useState([]); // 1
+  useEffect(() => {
+    console.log("Hello World");
+  }
+  , []);
+
+  renderItem = ({data}) => {
+    return (
+      <TouchableOpacity>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+      </TouchableOpacity>
+    )
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FlatList data={bags} 
+      renderItem={bag => renderItem(bag)}>
+        <FlatList/>
     </View>
   );
 }
