@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>BMI Calculator</Text>
       <RNPickerSelect
         placeholder={{
@@ -32,14 +32,14 @@ const App = () => {
         value={measurementSystem}
       />
       <TextInput
-        placeholder="Weight"
+        placeholder="Weight (kg or lb)"
         style={styles.input}
         onChangeText={(text) => setWeight(text)}
         value={weight}
         keyboardType="numeric"
       />
       <TextInput
-        placeholder="Height"
+        placeholder="Height (cm or in)"
         style={styles.input}
         onChangeText={(text) => setHeight(text)}
         value={height}
@@ -47,70 +47,91 @@ const App = () => {
       />
       <Button title="Calculate BMI" onPress={calculateBMI} />
       {bmi && (
-        <Text style={styles.result}>
-          Your BMI: {bmi} -{' '}
-          {bmi < 18.5
-            ? 'Underweight'
-            : bmi < 24.9
-            ? 'Normal Weight'
-            : bmi < 29.9
-            ? 'Overweight'
-            : 'Obese'}
-        </Text>
+        <View style={styles.resultContainer}>
+          <Text style={styles.resultLabel}>Your BMI:</Text>
+          <Text style={styles.resultValue}>{bmi}</Text>
+          <Text style={styles.resultCategory}>
+            {bmi < 18.5
+              ? 'Underweight'
+              : bmi < 24.9
+              ? 'Normal Weight'
+              : bmi < 29.9
+              ? 'Overweight'
+              : 'Obese'}
+          </Text>
+        </View>
       )}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20,
+    backgroundColor: '#f0f0f0',
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#333',
   },
   input: {
-    width: '80%',
-    height: 40,
-    borderColor: 'gray',
+    width: '100%',
+    height: 50,
+    borderColor: '#ddd',
     borderWidth: 1,
-    marginTop: 10,
-    paddingLeft: 10,
-  },
-  result: {
-    marginTop: 20,
+    borderRadius: 8,
+    paddingLeft: 15,
+    marginBottom: 15,
     fontSize: 18,
+    backgroundColor: 'white',
+  },
+  resultContainer: {
+    marginTop: 30,
+    alignItems: 'center',
+  },
+  resultLabel: {
+    fontSize: 24,
     fontWeight: 'bold',
+    color: '#333',
+  },
+  resultValue: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  resultCategory: {
+    fontSize: 24,
+    color: '#333',
   },
 });
 
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
-    fontSize: 16,
+    fontSize: 18,
     paddingVertical: 12,
     paddingHorizontal: 10,
     borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 4,
-    color: 'black',
-    paddingRight: 30,
-    marginTop: 10,
-    width: '80%',
-  },
-  inputAndroid: {
-    fontSize: 16,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 0.5,
-    borderColor: 'purple',
+    borderColor: '#ddd',
     borderRadius: 8,
     color: 'black',
-    paddingRight: 30,
-    marginTop: 10,
-    width: '80%',
+    marginBottom: 15,
+    backgroundColor: 'white',
+  },
+  inputAndroid: {
+    fontSize: 18,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    color: 'black',
+    marginBottom: 15,
+    backgroundColor: 'white',
   },
 });
 
