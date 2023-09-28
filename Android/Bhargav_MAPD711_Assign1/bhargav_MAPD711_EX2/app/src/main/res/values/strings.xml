@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">bhargav_MAPD711_EX2</string>
+    <string name="Description">Task1App</string>
+    <string name="your_name">Your Name: Bhargav Borse</string>
+    <string name="your_qualification">Your Qualification: Master Degree</string>
+    <string name="your_profession">Your Profession: Software Engineer</string>
+    <string name="your_hobby">Your Hobby: Photography</string>
+    <string name="your_dream_job">Your Dream Job: Mobile App Developer</string>
+</resources>
