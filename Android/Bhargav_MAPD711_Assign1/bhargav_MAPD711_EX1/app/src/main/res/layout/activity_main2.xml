@@ -7,6 +7,7 @@
     android:padding="16dp"
     tools:context=".MainActivity2">
 
+<!--Text view will show the data sent by activity 1-->
     <TextView
         android:id="@+id/displayTextView"
         android:layout_width="wrap_content"

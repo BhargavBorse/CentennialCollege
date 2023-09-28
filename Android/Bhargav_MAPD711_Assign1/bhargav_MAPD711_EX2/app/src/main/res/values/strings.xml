@@ -1,6 +1,10 @@
 <resources>
+    <!--The name of android app-->
     <string name="app_name">bhargav_MAPD711_EX2</string>
-    <string name="Description">Task1App</string>
+
+    <!--Description or purpose of the app-->
+    <string name="Description">Task2App</string>
+    <!--Data for passing-->
     <string name="your_name">Your Name: Bhargav Borse</string>
     <string name="your_qualification">Your Qualification: Master Degree</string>
     <string name="your_profession">Your Profession: Software Engineer</string>

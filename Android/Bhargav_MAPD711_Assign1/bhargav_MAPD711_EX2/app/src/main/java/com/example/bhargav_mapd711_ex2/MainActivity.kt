@@ -13,14 +13,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val sendButton = findViewById<Button>(R.id.sendButton)
 
-        // Retrieve data from strings.xml
+        // Retrieving data from strings.xml
         val yourName = getString(R.string.your_name)
         val yourQualification = getString(R.string.your_qualification)
         val yourProfession = getString(R.string.your_profession)
         val yourHobby = getString(R.string.your_hobby)
         val yourDreamJob = getString(R.string.your_dream_job)
 
-        // Display the data in a TextView
+        // Displaying the data in a TextView
         val infoTextView = findViewById<TextView>(R.id.infoTextView)
         val infoText = """
             $yourName
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         infoTextView.text = infoText
 
         sendButton.setOnClickListener(View.OnClickListener {
-            // Create an Intent to start the second activity
+            // Creating an Intent to start the second activity
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
 
