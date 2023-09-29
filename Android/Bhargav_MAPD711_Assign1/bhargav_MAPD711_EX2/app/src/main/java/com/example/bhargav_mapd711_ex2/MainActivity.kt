@@ -34,7 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener(View.OnClickListener {
             // Creating an Intent to start the second activity
+
             val intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("details", infoText)
             startActivity(intent)
 
         })

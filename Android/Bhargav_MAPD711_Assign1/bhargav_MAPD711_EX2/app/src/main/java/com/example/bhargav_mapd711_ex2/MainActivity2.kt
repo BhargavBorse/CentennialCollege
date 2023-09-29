@@ -12,16 +12,10 @@ class MainActivity2 : AppCompatActivity() {
         // Retrieving and displaying the string values from resources
         val infoTextView = findViewById<TextView>(R.id.infoTextView)
 
-        // Creating a formatted text string by combining string resources from 'strings.xml'.
-        val infoText = """
-            ${getString(R.string.your_name)}
-            ${getString(R.string.your_qualification)}
-            ${getString(R.string.your_profession)}
-            ${getString(R.string.your_hobby)}
-            ${getString(R.string.your_dream_job)}
-        """.trimIndent()
+        //stored the details in value, got from main activity
+        val details = intent.getStringExtra("details")
 
         // Setting the formatted text as the content for 'infoTextView'.
-        infoTextView.text = infoText
+        infoTextView.text = details
     }
 }
