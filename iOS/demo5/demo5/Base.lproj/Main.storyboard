@@ -15,23 +15,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMC-FW-8Ye">
+                                <rect key="frame" x="108" y="400" width="177" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="As9-1r-v77"/>
+                                    <constraint firstAttribute="height" constant="50" id="GEM-Oe-Bk0"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Second View"/>
+                                <connections>
+                                    <action selector="goSecondView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIE-8K-17Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NMC-FW-8Ye" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fhg-uQ-D9y"/>
+                            <constraint firstItem="NMC-FW-8Ye" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g9n-lt-JMy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="4"/>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="qM4-C8-AKK">
             <objects>
-                <viewController id="eYg-9C-I6c" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="second" id="eYg-9C-I6c" customClass="SecondViewController" customModule="demo5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbB-Bh-6JD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkY-wf-fQ3">
+                                <rect key="frame" x="0.0" y="698" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Red" id="vw5-Mh-rBm">
+                                        <connections>
+                                            <action selector="goRedButtonClicked:" destination="eYg-9C-I6c" id="8Q9-tD-jMN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Green" id="Foh-Cv-CFS">
+                                        <connections>
+                                            <action selector="goGreenButtonClicked:" destination="eYg-9C-I6c" id="22d-Hg-v9n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Blue" id="2zy-JP-FSD">
+                                        <connections>
+                                            <action selector="goBlueButtonClicked:" destination="eYg-9C-I6c" id="tg0-HA-DNo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" systemColor="systemTealColor"/>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="y7x-Jk-QYL"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRc-rW-Gof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -43,8 +87,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

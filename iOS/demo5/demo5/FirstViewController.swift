@@ -14,6 +14,10 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func goSecondView(_ sender: Any) {
+        let control = storyboard?.instantiateViewController(identifier: "second") as! SecondViewController
+        present(control, animated: true)
+    }
+    
 }
 

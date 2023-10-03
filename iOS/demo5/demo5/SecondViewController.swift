@@ -15,7 +15,16 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func goRedButtonClicked(_ sender: Any) {
+        view.backgroundColor = .red
+    }
+    
+    @IBAction func goGreenButtonClicked(_ sender: Any) {
+        view.backgroundColor = .green
+    }
+    @IBAction func goBlueButtonClicked(_ sender: Any) {
+        view.backgroundColor = .blue
+    }
     /*
     // MARK: - Navigation
 
