@@ -5,7 +5,7 @@ let HOST = '127.0.0.1';
 const mongoose = require ("mongoose");
 const username = "bhargavborse4898";
 const password = "eeetA3ufnAScR0Fv";
-const dbname = "mapd713db";
+const dbname = "Demo6";
 
 // Atlas MongoDb connection string format
 //mongodb+srv://<username>:<password>@cluster0.k7qyrcg.mongodb.net/<dbname(optional)>?retryWrites=true&w=majority
