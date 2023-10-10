@@ -9,6 +9,8 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -16,6 +18,7 @@ class FirstViewController: UIViewController {
 
     @IBAction func goSecondView(_ sender: Any) {
         let control = storyboard?.instantiateViewController(identifier: "second") as! SecondViewController
+        control.myName = textField.text
         present(control, animated: true)
     }
     

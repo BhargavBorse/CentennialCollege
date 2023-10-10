@@ -9,9 +9,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet var lblName: UILabel!
+    var myName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lblName.text = myName
         // Do any additional setup after loading the view.
     }
     
