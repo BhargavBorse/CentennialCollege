@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+
 class CustomerInfoActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var nameEditText: EditText
@@ -28,6 +29,7 @@ class CustomerInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_customer_info)
 
         // Initialize SharedPreferences
+
         sharedPreferences = getSharedPreferences("OrderPrefs", Context.MODE_PRIVATE)
 
         // Initialize UI elements
@@ -105,13 +107,21 @@ class CustomerInfoActivity : AppCompatActivity() {
     private fun createOrderSummary(customerName: String): String {
         val selectedPizzaType = sharedPreferences.getString("selectedPizzaType", "")
         val selectedSize = sharedPreferences.getString("selectedSize", "")
-        val selectedToppings = sharedPreferences.getString("selectedToppings", "")
+        val defaultValue: Set<String> = HashSet() // Default value if the preference is not set
 
-        val toppingsText = if (!selectedToppings.isNullOrBlank()) {
-            "Toppings: $selectedToppings"
-        } else {
-            "No additional toppings"
-        }
+        val toppingsTextArray: Set<String>? = sharedPreferences.getStringSet("selectedToppings", defaultValue);
+        val delimiter = ", " // You can choose any delimiter you like
+        val toppingsText = setToStringWithSeparator(toppingsTextArray!!, delimiter)
+
+
+
+//        val selectedToppings = sharedPreferences.getString("selectedToppings", "")
+
+//        val toppingsText = if (!selectedToppings.isNullOrBlank()) {
+//            "Toppings: $selectedToppings"
+//        } else {
+//            "No additional toppings"
+//        }
 
         return "Customer Name: $customerName\n" +
                 "Type of Pizza: $selectedPizzaType\n" +
@@ -120,7 +130,9 @@ class CustomerInfoActivity : AppCompatActivity() {
                 "Customer Address: ${addressEditText.text}\n" +
                 "Thank you for your order!"
     }
-
+    fun setToStringWithSeparator(set: Set<String?>, separator: String): String {
+        return set.filterNotNull().joinToString(separator)
+    }
     private fun displayOrderSummary(orderSummary: String) {
         val orderSummaryTextView = findViewById<TextView>(R.id.orderSummaryTextView)
         orderSummaryTextView.text = orderSummary

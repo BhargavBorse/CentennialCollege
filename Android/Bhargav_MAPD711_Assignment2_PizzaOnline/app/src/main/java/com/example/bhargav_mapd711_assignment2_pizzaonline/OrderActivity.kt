@@ -26,7 +26,7 @@ class OrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
 
-        sharedPreferences = getSharedPreferences("PizzaOrderPrefs", MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("OrderPrefs", MODE_PRIVATE)
 
         pizzaSizeRadioGroup = findViewById(R.id.pizzaSizeRadioGroup)
         checkoutButton = findViewById(R.id.checkoutButton)
@@ -47,6 +47,7 @@ class OrderActivity : AppCompatActivity() {
                 // Save the selected size and toppings to SharedPreferences
                 val editor = sharedPreferences.edit()
                 editor.putString("selectedSize", selectedSize)
+
                 editor.putStringSet("selectedToppings", selectedToppings.toSet())
                 editor.apply()
 
