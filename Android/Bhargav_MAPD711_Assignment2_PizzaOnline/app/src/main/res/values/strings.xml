@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pizza</string>
+    <string-array name="card_types">
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>American Express</item>
+        <item>Discover</item>
+        <!-- Add more card types if needed -->
+    </string-array>
+</resources>

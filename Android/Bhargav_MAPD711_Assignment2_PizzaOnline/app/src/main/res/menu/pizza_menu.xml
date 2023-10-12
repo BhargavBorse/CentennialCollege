@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/meatSupreme"
+        android:title="Meat Supreme" />
+    <item
+        android:id="@+id/superHawaiian"
+        android:title="Super Hawaiian" />
+    <item
+        android:id="@+id/veggie"
+        android:title="Veggie" />
+    <item
+        android:id="@+id/mediterranean"
+        android:title="Mediterranean" />
+    <item
+        android:id="@+id/cheddarSupreme"
+        android:title="Cheddar Supreme" />
+
+</menu>
