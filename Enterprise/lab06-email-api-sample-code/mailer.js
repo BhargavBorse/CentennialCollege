@@ -6,8 +6,8 @@ async function main() {
     host: "sandbox.smtp.mailtrap.io",
     port: 2525,
     auth: {
-      user: "USER", // change to user generated in https://mailtrap.io/ account
-      pass: "PASSWORD" // change to password generated in https://mailtrap.io/ account
+      user: "8bee5689aa770c",
+      pass: "43db5d7d95b7a6"
     }
   });
   // send mail with defined transport object

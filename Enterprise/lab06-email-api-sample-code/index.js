@@ -1,9 +1,9 @@
 let SERVER_NAME = 'user-api'
-let PORT = 3000;
+let PORT = 2000;
 let HOST = '127.0.0.1';
 
 const NewsAPI = require('newsapi');
-const apikey = 'YOUR_API_KEY'; // replace with the API key obtained in https://newsapi.org/
+const apikey = 'a1ed439a834d410281b45e9df77fc557'; // replace with the API key obtained in https://newsapi.org/
 const newsapi = new NewsAPI(apikey);
 
 const nodemailer = require("nodemailer");
@@ -158,15 +158,15 @@ server.post('/news', function (req, res, next) {
   });
 })
 
-async function sendEmail(requestBody) {
-  var transport = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: "USER", // change to user generated in https://mailtrap.io/ account
-      pass: "PASSWORD" // change to password generated in https://mailtrap.io/ account
-    }
-  });
+  async function sendEmail(requestBody) {
+    var transport = nodemailer.createTransport({
+      host: "sandbox.smtp.mailtrap.io",
+      port: 2525,
+      auth: {
+        user: "8bee5689aa770c",
+        pass: "43db5d7d95b7a6"
+      }
+    });
   // send mail with defined transport object
   let info = await transport.sendMail({
     from: requestBody.mailfrom,
