@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4336d6e9-cec6-4143-88dc-9d28f175ced2" name="Changes" comment="" />
+    <list default="true" id="a4cc6e8e-5074-4c02-bb88-8fb575541303" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bhargav_MAPD711_Assignment2_PizzaOnline/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bhargav_MAPD711_Assignment2_PizzaOnline/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2VtmVr6SRVJhM1fZAnvdoWSbRyk" />
+  <component name="ProjectId" id="2Wi6lBssZjsPDLMh9SAShljJeHg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,7 +42,7 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="Bhargav_MAPD711_Assign1.app.main" />
+      <module name="mapsGoogle.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -108,11 +111,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4336d6e9-cec6-4143-88dc-9d28f175ced2" name="Changes" comment="" />
-      <created>1695663776832</created>
+      <changelist id="a4cc6e8e-5074-4c02-bb88-8fb575541303" name="Changes" comment="" />
+      <created>1697203201219</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695663776832</updated>
+      <updated>1697203201219</updated>
     </task>
     <servers />
   </component>

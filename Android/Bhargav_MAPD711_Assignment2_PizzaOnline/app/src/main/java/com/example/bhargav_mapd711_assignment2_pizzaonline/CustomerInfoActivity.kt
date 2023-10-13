@@ -24,6 +24,7 @@ class CustomerInfoActivity : AppCompatActivity() {
     private lateinit var cardTypeSpinner: Spinner
     private lateinit var creditCardNumberEditText: EditText
     private lateinit var expiryDateEditText: EditText
+    private lateinit var cvvEditText: EditText
     private lateinit var submitButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,7 @@ class CustomerInfoActivity : AppCompatActivity() {
         cardTypeSpinner = findViewById(R.id.cardTypeSpinner)
         creditCardNumberEditText = findViewById(R.id.creditCardNumberEditText)
         expiryDateEditText = findViewById(R.id.expiryDateEditText)
+        cvvEditText = findViewById(R.id.cvvEditText) // Initialize the CVV field
         submitButton = findViewById(R.id.submitButton)
 
         // Setting up the Spinner for card types
@@ -59,6 +61,7 @@ class CustomerInfoActivity : AppCompatActivity() {
                 val inputCardType = cardTypeSpinner.selectedItem.toString()
                 val inputCreditCardNumber = creditCardNumberEditText.text.toString()
                 val inputExpiryDate = expiryDateEditText.text.toString()
+                val inputCVV = cvvEditText.text.toString() // Get the CVV input
 
                 val editor = sharedPreferences.edit()
                 editor.putString("customerName", inputName)
@@ -68,6 +71,7 @@ class CustomerInfoActivity : AppCompatActivity() {
                 editor.putString("selectedCardType", inputCardType)
                 editor.putString("customerCreditCardNumber", inputCreditCardNumber)
                 editor.putString("customerExpiryDate", inputExpiryDate)
+                editor.putString("customerCVV", inputCVV) // Save the CVV
                 editor.apply()
 
                 val intent = Intent(this, ConfirmationActivity::class.java)
@@ -108,6 +112,11 @@ class CustomerInfoActivity : AppCompatActivity() {
         } else if (!isExpiryDateValid(expiryDateEditText.text.toString())) {
             unfilledFields.add("Invalid Expiry Date")
         }
+        if (cvvEditText.text.isBlank()) { // Check if CVV is empty
+            unfilledFields.add("CVV")
+        } else if (!isCVVValid(cvvEditText.text.toString())) { // Validate CVV
+            unfilledFields.add("Invalid CVV")
+        }
         return unfilledFields
     }
 
@@ -117,7 +126,7 @@ class CustomerInfoActivity : AppCompatActivity() {
 
     private fun isCreditCardNumberValid(cardNumber: String): Boolean {
         // Implementing card validation logic here
-        return cardNumber.length == 16
+        return cardNumber.length == 16 && cardNumber.matches(Regex("[0-9]+"))
     }
 
     private fun isExpiryDateValid(expiryDate: String): Boolean {
@@ -130,5 +139,10 @@ class CustomerInfoActivity : AppCompatActivity() {
         } catch (e: Exception) {
             false
         }
+    }
+
+    private fun isCVVValid(cvv: String): Boolean {
+        // Implement your CVV validation logic here (e.g., check length)
+        return cvv.length == 3 && cvv.matches(Regex("[0-9]+"))
     }
 }

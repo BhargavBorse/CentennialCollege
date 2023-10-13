@@ -101,6 +101,7 @@
             android:orientation="vertical">
 
             <!-- CheckBoxes for Extra Toppings on the Left Side -->
+
             <CheckBox
                 android:id="@+id/cheeseCheckbox"
                 android:layout_width="wrap_content"
