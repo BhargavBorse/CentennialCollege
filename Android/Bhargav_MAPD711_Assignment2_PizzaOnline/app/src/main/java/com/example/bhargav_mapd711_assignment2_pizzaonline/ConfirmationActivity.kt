@@ -37,7 +37,8 @@ class ConfirmationActivity : AppCompatActivity() {
             Size of Pizza: $selectedSize
             $toppingsText
             Customer Address: $customerAddress
-            Thank you for your order!
+            
+            Thank you for your online order. Your order successfully received and will be delivered soon.
         """.trimIndent()
 
         orderSummaryTextView.text = orderSummary

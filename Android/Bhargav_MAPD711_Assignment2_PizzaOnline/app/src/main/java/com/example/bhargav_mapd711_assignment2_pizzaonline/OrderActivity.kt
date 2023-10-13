@@ -83,11 +83,8 @@ class OrderActivity : AppCompatActivity() {
             return false
         }
 
-        val selectedToppings = getSelectedToppings()
-        if (selectedToppings.isEmpty()) {
-            showToast("Please select at least one topping.")
-            return false
-        }
+        // You can add additional validation here if needed
+        // For example, you can check the total number of toppings selected or other criteria
 
         return true
     }

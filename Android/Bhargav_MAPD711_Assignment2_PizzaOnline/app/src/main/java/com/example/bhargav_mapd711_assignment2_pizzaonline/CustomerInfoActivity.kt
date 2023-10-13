@@ -1,17 +1,19 @@
 package com.example.bhargav_mapd711_assignment2_pizzaonline
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
+import android.util.Patterns
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class CustomerInfoActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -29,7 +31,6 @@ class CustomerInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_customer_info)
 
         // Initialize SharedPreferences
-
         sharedPreferences = getSharedPreferences("OrderPrefs", Context.MODE_PRIVATE)
 
         // Initialize UI elements
@@ -69,8 +70,8 @@ class CustomerInfoActivity : AppCompatActivity() {
                 editor.putString("customerExpiryDate", inputExpiryDate)
                 editor.apply()
 
-                val orderSummary = createOrderSummary(inputName)
-                displayOrderSummary(orderSummary)
+                val intent = Intent(this, ConfirmationActivity::class.java)
+                startActivity(intent)
 
                 // Display a confirmation message or perform other actions
                 Toast.makeText(this, "Customer information saved.", Toast.LENGTH_SHORT).show()
@@ -94,48 +95,41 @@ class CustomerInfoActivity : AppCompatActivity() {
         }
         if (phoneNumberEditText.text.isBlank()) {
             unfilledFields.add("Phone Number")
+        } else if (!isPhoneNumberValid(phoneNumberEditText.text.toString())) {
+            unfilledFields.add("Invalid Phone Number")
         }
         if (creditCardNumberEditText.text.isBlank()) {
             unfilledFields.add("Credit Card Number")
+        } else if (!isCreditCardNumberValid(creditCardNumberEditText.text.toString())) {
+            unfilledFields.add("Invalid Credit Card Number")
         }
         if (expiryDateEditText.text.isBlank()) {
             unfilledFields.add("Expiry Date")
+        } else if (!isExpiryDateValid(expiryDateEditText.text.toString())) {
+            unfilledFields.add("Invalid Expiry Date")
         }
         return unfilledFields
     }
 
-    private fun createOrderSummary(customerName: String): String {
-        val selectedPizzaType = sharedPreferences.getString("selectedPizzaType", "")
-        val selectedSize = sharedPreferences.getString("selectedSize", "")
-        val defaultValue: Set<String> = HashSet() // Default value if the preference is not set
-
-        val toppingsTextArray: Set<String>? = sharedPreferences.getStringSet("selectedToppings", defaultValue);
-        val delimiter = ", " // You can choose any delimiter you like
-        val toppingsText = setToStringWithSeparator(toppingsTextArray!!, delimiter)
-
-
-
-//        val selectedToppings = sharedPreferences.getString("selectedToppings", "")
-
-//        val toppingsText = if (!selectedToppings.isNullOrBlank()) {
-//            "Toppings: $selectedToppings"
-//        } else {
-//            "No additional toppings"
-//        }
-
-        return "Customer Name: $customerName\n" +
-                "Type of Pizza: $selectedPizzaType\n" +
-                "Size of Pizza: $selectedSize\n" +
-                "$toppingsText\n" +
-                "Customer Address: ${addressEditText.text}\n" +
-                "Thank you for your order!"
+    private fun isPhoneNumberValid(phone: String): Boolean {
+        return Patterns.PHONE.matcher(phone).matches()
     }
-    fun setToStringWithSeparator(set: Set<String?>, separator: String): String {
-        return set.filterNotNull().joinToString(separator)
+
+    private fun isCreditCardNumberValid(cardNumber: String): Boolean {
+        // Implement your credit card validation logic here
+        // For simplicity, you can check the length
+        return cardNumber.length == 16
     }
-    private fun displayOrderSummary(orderSummary: String) {
-        val orderSummaryTextView = findViewById<TextView>(R.id.orderSummaryTextView)
-        orderSummaryTextView.text = orderSummary
-        orderSummaryTextView.visibility = View.VISIBLE
+
+    private fun isExpiryDateValid(expiryDate: String): Boolean {
+        val dateFormat = SimpleDateFormat("MM/yy", Locale.getDefault())
+        dateFormat.isLenient = false
+        return try {
+            val date = dateFormat.parse(expiryDate)
+            val currentDate = Date()
+            date != null && date.after(currentDate)
+        } catch (e: Exception) {
+            false
+        }
     }
 }
