@@ -26,6 +26,7 @@ class OrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
 
+        // Initializing SharedPreferences for storing order preferences
         sharedPreferences = getSharedPreferences("OrderPrefs", MODE_PRIVATE)
 
         pizzaSizeRadioGroup = findViewById(R.id.pizzaSizeRadioGroup)
@@ -40,17 +41,17 @@ class OrderActivity : AppCompatActivity() {
 
         checkoutButton.setOnClickListener {
             if (validateOrder()) {
-                // Collect data from UI components (e.g., radio buttons, checkboxes)
+                // Collecting data from UI components
                 val selectedSize = getSelectedSize()
                 val selectedToppings = getSelectedToppings()
 
-                // Save the selected size and toppings to SharedPreferences
+                // Saving the selected size and toppings to SharedPreferences
                 val editor = sharedPreferences.edit()
                 editor.putString("selectedSize", selectedSize)
-
                 editor.putStringSet("selectedToppings", selectedToppings.toSet())
                 editor.apply()
 
+                // Navigating to the customer information activity
                 val intent = Intent(this, CustomerInfoActivity::class.java)
                 startActivity(intent)
             }
@@ -72,7 +73,7 @@ class OrderActivity : AppCompatActivity() {
         if (spinachCheckbox.isChecked) selectedToppings.add(spinachCheckbox.text.toString())
         if (blackOlivesCheckbox.isChecked) selectedToppings.add(blackOlivesCheckbox.text.toString())
         if (spanishOnionsCheckbox.isChecked) selectedToppings.add(spanishOnionsCheckbox.text.toString())
-        // Add other toppings in a similar manner
+
         return selectedToppings
     }
 
@@ -82,9 +83,6 @@ class OrderActivity : AppCompatActivity() {
             showToast("Please select a pizza size.")
             return false
         }
-
-        // You can add additional validation here if needed
-        // For example, you can check the total number of toppings selected or other criteria
 
         return true
     }

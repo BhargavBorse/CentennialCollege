@@ -1,4 +1,5 @@
 package com.example.bhargav_mapd711_assignment2_pizzaonline
+
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -13,18 +14,20 @@ class ConfirmationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirmation)
 
-        // Initialize SharedPreferences
+        // Initializing SharedPreferences for storing order information
         sharedPreferences = getSharedPreferences("OrderPrefs", Context.MODE_PRIVATE)
 
+        // Initializing the TextView for displaying the order summary
         orderSummaryTextView = findViewById(R.id.orderSummaryTextView)
 
-        // Retrieve and display the order summary from SharedPreferences
+        // Retrieving and displaying the order summary information from SharedPreferences
         val customerName = sharedPreferences.getString("customerName", "")
         val selectedPizzaType = sharedPreferences.getString("selectedPizzaType", "")
         val selectedSize = sharedPreferences.getString("selectedSize", "")
         val selectedToppings = sharedPreferences.getStringSet("selectedToppings", emptySet())?.joinToString(", ")
         val customerAddress = sharedPreferences.getString("customerAddress", "")
 
+        // Preparing the text to display in the order summary
         val toppingsText = if (selectedToppings.isNullOrEmpty()) {
             "No toppings"
         } else {
@@ -38,10 +41,10 @@ class ConfirmationActivity : AppCompatActivity() {
             $toppingsText
             Customer Address: $customerAddress
             
-            Thank you for your online order. Your order successfully received and will be delivered soon.
+            Thank you for your online order. Your order has been successfully received and will be delivered soon.
         """.trimIndent()
 
+        // Setting the order summary text in the TextView
         orderSummaryTextView.text = orderSummary
     }
 }
-

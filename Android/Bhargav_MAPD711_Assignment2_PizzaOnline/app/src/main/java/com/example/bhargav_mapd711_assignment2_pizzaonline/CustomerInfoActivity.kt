@@ -30,10 +30,10 @@ class CustomerInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_info)
 
-        // Initialize SharedPreferences
+        // Initializing SharedPreferences for storing order information
         sharedPreferences = getSharedPreferences("OrderPrefs", Context.MODE_PRIVATE)
 
-        // Initialize UI elements
+        // Initializing UI elements
         nameEditText = findViewById(R.id.nameEditText)
         addressEditText = findViewById(R.id.addressEditText)
         postalCodeEditText = findViewById(R.id.postalCodeEditText)
@@ -43,7 +43,7 @@ class CustomerInfoActivity : AppCompatActivity() {
         expiryDateEditText = findViewById(R.id.expiryDateEditText)
         submitButton = findViewById(R.id.submitButton)
 
-        // Set up the Spinner for card types
+        // Setting up the Spinner for card types
         val cardTypes = resources.getStringArray(R.array.card_types)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cardTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -73,7 +73,7 @@ class CustomerInfoActivity : AppCompatActivity() {
                 val intent = Intent(this, ConfirmationActivity::class.java)
                 startActivity(intent)
 
-                // Display a confirmation message or perform other actions
+                // Displaying a confirmation message
                 Toast.makeText(this, "Customer information saved.", Toast.LENGTH_SHORT).show()
             } else {
                 val errorMessage = "Please fill in the following fields: ${unfilledFields.joinToString(", ")}"
@@ -116,8 +116,7 @@ class CustomerInfoActivity : AppCompatActivity() {
     }
 
     private fun isCreditCardNumberValid(cardNumber: String): Boolean {
-        // Implement your credit card validation logic here
-        // For simplicity, you can check the length
+        // Implementing card validation logic here
         return cardNumber.length == 16
     }
 
