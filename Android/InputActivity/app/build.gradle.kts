@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.inputactivity"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.inputactivity"
