@@ -5,12 +5,14 @@ import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 
-const Stack = createStackNavigator();
 
 function AppNavigator() {
+
+  const Stack = createStackNavigator();
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Register">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />

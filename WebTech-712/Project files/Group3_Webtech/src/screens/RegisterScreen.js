@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, RadioForm } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import RadioButtonGroup from './../components/RadioButtonGroup';
 
 function RegisterScreen({ navigation }) {
   const [firstName, setFirstName] = useState('');
@@ -10,6 +11,9 @@ function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState(''); // Will store 'Male' or 'Female'
   const [healthcareProvider, setHealthcareProvider] = useState(''); // Will store 'Doctor' or 'Nurse'
+
+  const genders = ['Male', 'Female'];
+  const healthcareProviders = ['Doctor', 'Nurse'];
 
   const handleRegister = () => {
     // Add your registration logic here
@@ -65,28 +69,16 @@ function RegisterScreen({ navigation }) {
         onChangeText={(text) => setEmail(text)}
       />
       <Text style={styles.label}>Gender</Text>
-      <RadioForm
-        radio_props={[
-          { label: 'Male', value: 'Male' },
-          { label: 'Female', value: 'Female' },
-        ]}
-        initial={-1}
-        formHorizontal={true}
-        labelHorizontal={true}
-        onPress={(value) => setGender(value)}
-        buttonColor={'#ED1703'}
+      <RadioButtonGroup
+        options={genders}
+        selectedOption={gender}
+        onOptionSelect={setGender}
       />
       <Text style={styles.label}>Healthcare Provider Type</Text>
-      <RadioForm
-        radio_props={[
-          { label: 'Doctor', value: 'Doctor' },
-          { label: 'Nurse', value: 'Nurse' },
-        ]}
-        initial={-1}
-        formHorizontal={true}
-        labelHorizontal={true}
-        onPress={(value) => setHealthcareProvider(value)}
-        buttonColor={'#ED1703'}
+      <RadioButtonGroup
+        options={healthcareProviders}
+        selectedOption={healthcareProvider}
+        onOptionSelect={setHealthcareProvider}
       />
       <Button title="Register" onPress={handleRegister} color="#ED1703" />
       <Text style={styles.loginText}>Already have an account?</Text>
