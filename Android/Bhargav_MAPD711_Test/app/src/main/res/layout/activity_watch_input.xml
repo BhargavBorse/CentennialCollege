@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WatchInputActivity">
+
+    <!-- activity_watch_input.xml -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title: Watch Buying Helper App"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apple Watch Selection"
+            android:textSize="18sp"
+            android:padding="16dp"/>
+
+        <!-- Spinner for Apple Watch Selection -->
+        <Spinner
+            android:id="@+id/watchSelectionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loop Selection"
+            android:textSize="18sp"
+            android:padding="16dp"/>
+
+        <!-- RadioGroup for Loop Selection -->
+        <RadioGroup
+            android:id="@+id/loopSelectionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/nikeSportsLoop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike Sports Loop - $50"/>
+            <RadioButton
+                android:id="@+id/bridonSingleLoop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bridon Single Tour - $60"/>
+            <RadioButton
+                android:id="@+id/trailLoop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trail Loop - $70"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watch Size"
+            android:textSize="18sp"
+            android:padding="16dp"/>
+
+        <!-- Horizontal RadioGroup for Watch Size -->
+        <RadioGroup
+            android:id="@+id/watchSizeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/size41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="41 inches - $50"/>
+            <RadioButton
+                android:id="@+id/size45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45 inches - $100"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trade Option: $50 discount"
+            android:textSize="18sp"
+            android:padding="16dp"/>
+
+        <!-- Horizontal RadioGroup for Trade Option -->
+        <RadioGroup
+            android:id="@+id/tradeOptionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/tradeInRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trade-In"/>
+            <RadioButton
+                android:id="@+id/noTradeInRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Trade-In"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/showCheckWebsiteBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Website"/>
+
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
