@@ -68,19 +68,25 @@ function RegisterScreen({ navigation }) {
         value={email}
         onChangeText={(text) => setEmail(text)}
       />
-      <Text style={styles.label}>Gender</Text>
-      <RadioButtonGroup
-        options={genders}
-        selectedOption={gender}
-        onOptionSelect={setGender}
-      />
-      <Text style={styles.label}>Healthcare Provider Type</Text>
-      <RadioButtonGroup
-        options={healthcareProviders}
-        selectedOption={healthcareProvider}
-        onOptionSelect={setHealthcareProvider}
-      />
-      <Button title="Register" onPress={handleRegister} color="#ED1703" />
+      <View style={styles.labelContainer}>
+        <Text style={styles.label}>Gender</Text>
+        <RadioButtonGroup
+          options={genders}
+          selectedOption={gender}
+          onOptionSelect={setGender}
+        />
+      </View>
+      <View style={styles.labelContainer}>
+        <Text style={styles.label}>Healthcare Provider Type</Text>
+        <RadioButtonGroup
+          options={healthcareProviders}
+          selectedOption={healthcareProvider}
+          onOptionSelect={setHealthcareProvider}
+        />
+      </View>
+      <TouchableOpacity style={styles.loginButton} onPress={handleRegister}>
+        <Text style={styles.loginButtonText}>Register</Text>
+      </TouchableOpacity>
       <Text style={styles.loginText}>Already have an account?</Text>
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text style={styles.loginLink}>Login here</Text>
@@ -103,7 +109,7 @@ const styles = StyleSheet.create({
     color: '#ED1703',
   },
   input: {
-    width: 280,
+    width: 300,
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
@@ -111,16 +117,31 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     borderRadius: 10,
   },
+  labelContainer: {
+    flexDirection: 'column',
+    alignItems: 'center', // Center the labels
+    marginBottom: 10,
+  },
   label: {
     fontSize: 16,
     marginBottom: 5,
+  },
+  loginButton: {
+    backgroundColor: '#ED1703',
+    padding: 10,
+    borderRadius: 10,
+    width: 300,
+  },
+  loginButtonText: {
+    color: 'white',
+    textAlign: 'center',
   },
   loginText: {
     marginTop: 20,
     color: 'black',
   },
   loginLink: {
-    color: 'blue',
+    color: '#ED1703',
     textDecorationLine: 'underline',
   },
 });

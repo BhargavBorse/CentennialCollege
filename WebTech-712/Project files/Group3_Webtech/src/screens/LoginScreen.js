@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState('');
@@ -32,7 +33,7 @@ function LoginScreen({ navigation }) {
           style={styles.showPasswordButton}
           onPress={() => setShowPassword(!showPassword)}
         >
-          <Text>{showPassword ? 'Hide' : 'Show'}</Text>
+          <Icon name={showPassword ? 'eye' : 'eye-slash'} size={20} color="gray" />
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
@@ -54,19 +55,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFE1E1',
   },
   heading: {
-    fontSize: 32, // Increase the font size for the heading
+    fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#ED1703',
   },
   input: {
-    width: 280, // Increase the width of the text inputs
+    width: 300,
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 10,
     paddingLeft: 10,
-    borderRadius: 10, // Add border radius
+    borderRadius: 10,
   },
   passwordContainer: {
     flexDirection: 'row',
@@ -74,13 +75,13 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   passwordInput: {
-    width: 280, // Increase the width of the password input
+    width: 300, // Reduced the width to accommodate the icon
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 10,
     paddingLeft: 10,
-    borderRadius: 10, // Add border radius
+    borderRadius: 10,
   },
   showPasswordButton: {
     position: 'absolute',
@@ -90,8 +91,8 @@ const styles = StyleSheet.create({
   loginButton: {
     backgroundColor: '#ED1703',
     padding: 10,
-    borderRadius: 10, // Add border radius
-    width: 280, // Increase the width of the login button
+    borderRadius: 10,
+    width: 300,
   },
   loginButtonText: {
     color: 'white',
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   signupLink: {
-    color: 'blue',
+    color: '#ED1703',
     textDecorationLine: 'underline',
   },
 });
