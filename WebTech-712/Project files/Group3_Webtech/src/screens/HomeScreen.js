@@ -1,16 +1,41 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-function HomeScreen({ navigation }) {
+function SplashScreen({ navigation }) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('Login');
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
   return (
-    <View>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('Login')}
-      />
+    <View style={styles.container}>
+      <FontAwesome name="user-md" size={170} color="#ED1703" />
+      <Text style={styles.appName}>KB Clinic</Text>
+      <Text style={styles.slogan}>We care for you</Text>
     </View>
   );
 }
 
-export default HomeScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#EFE1E1',
+  },
+  appName: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#ED1703',
+  },
+  slogan: {
+    fontSize: 30,
+    color: '#ED1703',
+  },
+});
+
+export default SplashScreen;
