@@ -7,6 +7,7 @@ import RegisterScreen from '../screens/RegisterScreen';
 import MainPage from '../screens/MainPage';
 import AllPatients from '../screens/AllPatients';
 import CriticalPatients from '../screens/CriticalPatients';
+import ClinicalTests from '../screens/ClinicalTests';
 
 function AppNavigator() {
   const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ function AppNavigator() {
         <Stack.Screen name="Main" component={MainPage} />
         <Stack.Screen name="AllPatients" component={AllPatients} />
         <Stack.Screen name="CriticalPatients" component={CriticalPatients} />
+        <Stack.Screen name="ClinicalTests" component={ClinicalTests} />
       </Stack.Navigator>
     </NavigationContainer>
   );
