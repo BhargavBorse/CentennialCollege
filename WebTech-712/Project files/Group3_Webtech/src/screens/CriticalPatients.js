@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-function AllPatients({ navigation }) {
+function CriticalPatients({ navigation }) {
   const patients = [
     { name: 'Patient 1', caseNumber: 'Case No: 12345' },
     { name: 'Patient 2', caseNumber: 'Case No: 23456' },
@@ -12,10 +12,7 @@ function AllPatients({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.pageHeading}>Patients</Text>
-        <TouchableOpacity style={styles.addButton} onPress={() => { /* Handle the add user action */ }}>
-          <Icon name="user-plus" size={17} color="white" />
-        </TouchableOpacity>
+        <Text style={styles.pageHeading}>Critical Patients</Text>
       </View>
       <ScrollView contentContainerStyle={styles.cardContainer}>
         {patients.map((patient, index) => (
@@ -25,14 +22,6 @@ function AllPatients({ navigation }) {
               <Text style={styles.cardInfo}>{patient.caseNumber}</Text>
             </View>
             <View style={styles.cardRight}>
-              <View style={styles.buttonGroup}>
-                <TouchableOpacity style={styles.buttonFilled} onPress={() => { /* Handle delete user action */ }}>
-                  <Icon name="trash" size={20} color="white" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonFilled} onPress={() => { /* Handle edit user action */ }}>
-                  <Icon name="pencil" size={20} color="white" />
-                </TouchableOpacity>
-              </View>
               <TouchableOpacity style={styles.viewDetailsButton} onPress={() => { /* Handle view details action */ }}>
                 <Text style={styles.viewDetailsButtonText}>View Details</Text>
               </TouchableOpacity>
@@ -62,6 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#ED1703',
+    textAlign: 'center',
   },
   addButton: {
     justifyContent: 'center',
@@ -92,6 +82,7 @@ const styles = StyleSheet.create({
   },
   cardRight: {
     alignItems: 'flex-end',
+    paddingTop: 20,
   },
   cardName: {
     fontSize: 18,
@@ -128,4 +119,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AllPatients;
+export default CriticalPatients;
