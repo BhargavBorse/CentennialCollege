@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 function LoginScreen({ navigation }) {
   const [username, setUsername] = useState('');
@@ -10,6 +11,9 @@ function LoginScreen({ navigation }) {
   const handleLogin = () => {
     // Add your login logic here
     console.log('Logging in with username:', username, 'and password:', password);
+
+    // Redirect to the Home screen after successful login
+    navigation.navigate('Main');
   };
 
   return (
