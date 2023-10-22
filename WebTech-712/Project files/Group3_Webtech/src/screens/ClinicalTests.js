@@ -9,6 +9,15 @@ function ClinicalTests({ navigation }) {
     { name: 'Patient 3', caseNumber: 'Case No: 34567', testDate: 'Last Test: 12/12/2020' },
   ];
 
+  // Handle the "eye" button press to navigate to Clinical Test Details
+  const handleViewDetails = (patient) => {
+    navigation.navigate('ClinicalTestDetails', {
+      name: patient.name,
+      caseNumber: patient.caseNumber,
+      testDate: patient.testDate,
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -32,10 +41,10 @@ function ClinicalTests({ navigation }) {
                 </TouchableOpacity>
               </View>
               <View style={styles.buttonGroup}>
-                <TouchableOpacity style={styles.buttonFilled} onPress={() => { /* Handle delete user action */ }}>
+                <TouchableOpacity style={styles.buttonFilled} onPress={() => { handleViewDetails(patient)/* Handle view details*/ }}>
                   <Icon name="eye" size={17} color="white" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonFilled} onPress={() => { /* Handle edit user action */ }}>
+                <TouchableOpacity style={styles.buttonFilled} onPress={() => {  }}>
                   <Icon name="user-plus" size={17} color="white" />
                 </TouchableOpacity>
               </View>
