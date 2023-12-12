@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerLogin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="Customer Login"
+            android:layout_marginLeft="10dp"
+            android:textSize="30sp"
+            android:textColor="@color/green">
+        </TextView>
+
+        <EditText
+            android:id="@+id/customerLoginUserName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Enter User Name"
+            >
+        </EditText>
+
+        <EditText
+            android:id="@+id/customerLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Enter User Name"
+            >
+        </EditText>
+        <Button
+            android:id="@+id/customerLoginButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="@color/white">
+        </Button>
+
+        <Button
+            android:id="@+id/customerLoginBackButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Go To Main Page"
+            android:textAlignment="center"
+            android:textColor="@color/white">
+        </Button>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account?">
+            </TextView>
+
+            <TextView
+                android:id="@+id/goToLoginPageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register Here"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/green">
+            </TextView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

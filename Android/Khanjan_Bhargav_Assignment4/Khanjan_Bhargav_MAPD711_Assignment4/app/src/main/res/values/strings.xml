@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Khanjan_Bhargav_MAPD711_Assignment4</string>
+
+    <string-array name="Pizzatypes">
+        <item>Chicago Deep-Dish Pizza</item>
+        <item>Sicilian Pizza</item>
+        <item>Margherita Pizza</item>
+        <item>Stuffed Crust Pizza</item>
+        <item>Vegetarian/Vegan Pizza</item>
+    </string-array>
+</resources>

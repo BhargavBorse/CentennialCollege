@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminAddPizza">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="Add New Pizza"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"
+            android:textSize="30sp"
+            android:textColor="@color/green">
+        </TextView>
+
+        <EditText
+            android:id="@+id/addPizzaName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Enter Pizza Name"
+            >
+        </EditText>
+
+        <EditText
+            android:id="@+id/addPizzaPrice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Enter price"
+
+            >
+        </EditText>
+        <Spinner
+            android:id="@+id/pizzaTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewStart"
+            android:entries="@array/Pizzatypes"
+            />
+
+        <Button
+            android:id="@+id/adminAddPizzaButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Add Pizza"
+            android:layout_marginTop="50dp"
+            android:textAlignment="center"
+            android:textColor="@color/white">
+        </Button>
+
+        <Button
+            android:id="@+id/adminAddPizzaBackButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Go Back"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white">
+        </Button>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

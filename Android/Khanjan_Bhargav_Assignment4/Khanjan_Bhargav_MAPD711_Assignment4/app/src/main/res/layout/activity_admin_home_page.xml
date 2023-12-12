@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminHomePage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="30dp"
+               android:text="Hello,"
+               android:layout_marginTop="20dp"
+               android:layout_marginStart="20dp"
+               android:textAlignment="center"
+               android:textSize="20sp"
+               android:textStyle="bold"
+               >
+           </TextView>
+
+            <TextView
+                android:id="@+id/adminHomepageHello"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Admin"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="2dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textColor="@color/green"
+                >
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/adminProfileButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:scaleType="centerInside"
+                android:backgroundTint="@color/white"
+                app:tint="@color/green">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/adminLogoutButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:scaleType="centerInside"
+                android:backgroundTint="@color/white"
+                app:tint="@color/green">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+       <LinearLayout
+           android:id="@+id/AddNewPizzaLinearLayout"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp">
+           <ImageView
+               android:id="@+id/adminAddPizzaImage"
+               android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:scaleType="fitXY"
+               >
+           </ImageView>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="30dp"
+               android:text="Add New Pizza"
+               android:textColor="@color/green"
+               android:textAlignment="center"
+               android:textSize="20dp"
+               >
+
+           </TextView>
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/AddManageOrderLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp">
+            <ImageView
+                android:id="@+id/adminManageOrderImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                >
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Manage Orders"
+                android:textColor="@color/green"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

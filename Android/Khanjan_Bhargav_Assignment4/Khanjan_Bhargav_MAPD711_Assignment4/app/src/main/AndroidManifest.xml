@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Khanjan_Bhargav_MAPD711_Assignment4"
+        tools:targetApi="31">
+        <activity
+            android:name=".customerViewAllOrders"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmChangeStatus"
+            android:exported="false" />
+        <activity
+            android:name=".AdminViewAllProducts"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProfile"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerProfile"
+            android:exported="false" />
+        <activity
+            android:name=".OrderReview"
+            android:exported="false" />
+        <activity
+            android:name=".AdminAddPizza"
+            android:exported="false" />
+        <activity
+            android:name=".customerHomePage"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomePage"
+            android:exported="false" />
+        <activity
+            android:name=".AdminRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".adminLogin"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerLogin"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
